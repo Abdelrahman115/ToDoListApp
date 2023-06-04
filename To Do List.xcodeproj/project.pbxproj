@@ -30,6 +30,7 @@
 		BC69A5A52A2CDA2A00E19E3B /* LoginViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC69A5A42A2CDA2A00E19E3B /* LoginViewViewModel.swift */; };
 		BC69A5A72A2CDA3A00E19E3B /* RegisterViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC69A5A62A2CDA3A00E19E3B /* RegisterViewViewModel.swift */; };
 		BC69A5A92A2CDA4E00E19E3B /* ToDoListItemViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC69A5A82A2CDA4E00E19E3B /* ToDoListItemViewViewModel.swift */; };
+		BC95FF2C2A2CEE2E00F587C9 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC95FF2B2A2CEE2E00F587C9 /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		BC69A5A42A2CDA2A00E19E3B /* LoginViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewViewModel.swift; sourceTree = "<group>"; };
 		BC69A5A62A2CDA3A00E19E3B /* RegisterViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewViewModel.swift; sourceTree = "<group>"; };
 		BC69A5A82A2CDA4E00E19E3B /* ToDoListItemViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItemViewViewModel.swift; sourceTree = "<group>"; };
+		BC95FF2B2A2CEE2E00F587C9 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				BC69A5922A2CD91600E19E3B /* LoginView.swift */,
 				BC69A5942A2CD92600E19E3B /* RegisterView.swift */,
 				BC69A5962A2CD95300E19E3B /* ToDoListItemView.swift */,
+				BC95FF2B2A2CEE2E00F587C9 /* HeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC69A5932A2CD91600E19E3B /* LoginView.swift in Sources */,
+				BC95FF2C2A2CEE2E00F587C9 /* HeaderView.swift in Sources */,
 				BC41A0452A1A622B00DC4AE4 /* MainView.swift in Sources */,
 				BC69A5A92A2CDA4E00E19E3B /* ToDoListItemViewViewModel.swift in Sources */,
 				BC69A5A72A2CDA3A00E19E3B /* RegisterViewViewModel.swift in Sources */,
