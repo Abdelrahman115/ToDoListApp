@@ -8,8 +8,50 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @StateObject var viewModel = ProfileViewViewModel()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack{
+                VStack{
+                    //Avatar
+                    Image(systemName: "person.circle")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 125,height: 125)
+                        .padding()
+                    //Info: name,email,member since
+                    VStack(alignment: .leading){
+                        HStack{
+                            Text("Name: ")
+                                .bold()
+                            Text("Abdelrahman")
+                        }
+                        .padding(.bottom,5)
+                        HStack{
+                            Text("Email: ")
+                                .bold()
+                            Text("Abdelrahman")
+                        }
+                        .padding(.bottom,5)
+                        
+                        HStack{
+                            Text("Member Since: ")
+                                .bold()
+                            Text("Abdelrahman")
+                        }
+                    }
+                    .padding()
+                    // sign out
+                    TLButton(buttonTitle: "Sign Out", background: .red) {
+                        viewModel.logOut()
+                    }
+                    .frame(height: 75)
+                    .padding()
+                }
+                Spacer()
+            }
+            .navigationTitle("Profile")
+        }
     }
 }
 

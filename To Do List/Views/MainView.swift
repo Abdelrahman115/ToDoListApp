@@ -13,10 +13,37 @@ struct MainView: View {
     var body: some View {
         if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty{
             // signed in
-            ToDolistView()
+            TabView{
+                ToDolistView(userId: viewModel.currentUserId)
+                    .tabItem {
+                        Label("Home", systemImage: "house")
+                            //.tint(.green)
+                    }
+                ProfileView()
+                    .tabItem {
+                        Label("Profile", systemImage: "person.circle")
+                    }
+            }.accentColor(.green)
+            //accountView
+            
         }else{
             LoginView()
         }
+    }
+    
+    @ViewBuilder
+    var accountView:some View{
+        TabView{
+            ToDolistView(userId: viewModel.currentUserId)
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                        //.tint(.green)
+                }
+            ProfileView()
+                .tabItem {
+                    Label("Profile", systemImage: "person.circle")
+                }
+        }.accentColor(.green)
     }
 }
 
