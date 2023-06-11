@@ -13,45 +13,56 @@ struct ProfileView: View {
         NavigationView {
             VStack{
                 VStack{
-                    //Avatar
-                    Image(systemName: "person.circle")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 125,height: 125)
-                        .padding()
-                    //Info: name,email,member since
-                    VStack(alignment: .leading){
-                        HStack{
-                            Text("Name: ")
-                                .bold()
-                            Text("Abdelrahman")
-                        }
-                        .padding(.bottom,5)
-                        HStack{
-                            Text("Email: ")
-                                .bold()
-                            Text("Abdelrahman")
-                        }
-                        .padding(.bottom,5)
-                        
-                        HStack{
-                            Text("Member Since: ")
-                                .bold()
-                            Text("Abdelrahman")
-                        }
+                    if let user = viewModel.currentUser{
+                        profile(user: user)
+                    }else{
+                        Text("Loading Profile...")
                     }
-                    .padding()
-                    // sign out
-                    TLButton(buttonTitle: "Sign Out", background: .red) {
-                        viewModel.logOut()
-                    }
-                    .frame(height: 75)
-                    .padding()
                 }
-                Spacer()
+                
             }
             .navigationTitle("Profile")
         }
+        .onAppear{
+            viewModel.fetchUser()
+        }
+    }
+    @ViewBuilder
+    func profile(user:user) -> some View{
+        Image(systemName: "person.circle")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 125,height: 125)
+            .padding()
+        //Info: name,email,member since
+        VStack(alignment: .leading){
+            HStack{
+                Text("Name: ")
+                    .bold()
+                Text(user.name)
+            }
+            .padding(.bottom,5)
+            HStack{
+                Text("Email: ")
+                    .bold()
+                Text(user.email)
+            }
+            .padding(.bottom,5)
+            
+            HStack{
+                Text("Member Since: ")
+                    .bold()
+                Text("\(Date(timeIntervalSince1970: user.joined).formatted(date: .abbreviated, time: .shortened))")
+            }
+        }
+        .padding()
+        // sign out
+        TLButton(buttonTitle: "Sign Out", background: .red) {
+            viewModel.logOut()
+        }
+        .frame(height: 75)
+        .padding()
+        Spacer()
     }
 }
 

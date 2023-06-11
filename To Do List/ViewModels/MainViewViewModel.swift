@@ -18,6 +18,7 @@ class MainViewViewModel:ObservableObject{
                 self?.currentUserId = user?.uid ?? ""
             }
         }
+      
     }
     
     public var isSignedIn:Bool{

@@ -11,7 +11,8 @@ struct MainView: View {
     @StateObject var viewModel = MainViewViewModel()
     
     var body: some View {
-        if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty{
+        
+        if viewModel.isSignedIn == true,!viewModel.currentUserId.isEmpty{
             // signed in
             TabView{
                 ToDolistView(userId: viewModel.currentUserId)
@@ -27,7 +28,11 @@ struct MainView: View {
             //accountView
             
         }else{
-            LoginView()
+            if viewModel.isSignedIn == false{
+                LoginView()
+            }else{
+                Text("Loading")
+            }
         }
     }
     
